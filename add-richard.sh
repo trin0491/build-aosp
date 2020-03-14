@@ -1,5 +1,8 @@
 #!/bin/bash
+set -e
+
 adduser --uid 1000 --gecos "Richard Priestley" richard
+adduser richard sudo
 mkdir /home/richard/.ssh
 cp /root/.ssh/authorized_keys /home/richard/.ssh
 chown -R richard:richard /home/richard/.ssh
