@@ -16,9 +16,6 @@ ip=$(doctl compute droplet list --format "ID,Name,PublicIPv4" | grep ${name} | c
 if [ -z $ip]
 then
     ip=$(doctl compute droplet create ${name} --image ${image} --size ${size} --region ${region} --ssh-keys ${key} --volumes ${volume} --wait --format "PublicIPv4" --no-header)
-    sleep 20
-    scp init-vm.sh root@${ip}:/root/init-vm.sh
-    ssh root@${ip} /root/init-vm.sh
 fi
 echo $ip
 
