@@ -35,10 +35,8 @@ else
     sudo -u ${user} git config --global user.name ${user_name}
 fi
 
-if [[ -d "${mount}/aosp" ]]
+if [ ! -d "${mount}/aosp" ]
 then
-    echo "Not creating aosp: directory already exists"
-else
     mkdir -p "${mount}/aosp"
     chown ${user}:${user} "${mount}/aosp"
 fi
