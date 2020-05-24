@@ -8,7 +8,7 @@ region=lon1
 size="s-6vcpu-16gb"  
 # doctl compute image list-distribution --public 
 image="53893572"
-volume="d78e0c6e-65e0-11ea-9d6d-0a58ac14c051"
+volume="a3109932-9db4-11ea-93eb-0a58ac14c0f8"
 key="26792748"
 
 # field hack
