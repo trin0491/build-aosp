@@ -5,7 +5,8 @@ set -e
 name=cs1
 region=lon1
 # doctl compute size list
-size="s-6vcpu-16gb"  
+#  size="s-6vcpu-16gb"
+size="s-8vcpu-32gb"  
 # doctl compute image list-distribution --public 
 image="53893572"
 volume="a3109932-9db4-11ea-93eb-0a58ac14c0f8"
