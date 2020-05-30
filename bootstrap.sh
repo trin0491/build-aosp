@@ -18,13 +18,13 @@ fi
 apt-get --assume-yes update > /dev/null
 apt-get --assume-yes install git-core gnupg flex bison build-essential zip curl zlib1g-dev \
     gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev \
-    lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig > /dev/null
+    lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig repo > /dev/null
 
 if id ${user} > /dev/null
 then
     echo "Not creating user"
 else
-    adduser --uid 1000 --gecos ${user_name} ${user}
+    adduser --uid 1000 --gecos "${user_name}" "${user}"
     adduser ${user} sudo
     mkdir /home/${user}/.ssh
     cp /root/.ssh/authorized_keys /home/${user}/.ssh
@@ -32,7 +32,7 @@ else
     chmod 0700 /home/${user}/.ssh
     chmod 0600 /home/${user}/.ssh/authorized_keys
     sudo -u ${user} git config --global user.email ${email}
-    sudo -u ${user} git config --global user.name ${user_name}
+    sudo -u ${user} git config --global user.name "${user_name}"
 fi
 
 if [ ! -d "${mount}/aosp" ]
