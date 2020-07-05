@@ -5,5 +5,9 @@ then
     exit 1
 fi
 ip=$1
-scp bootstrap.sh root@${ip}:/root/bootstrap.sh
-ssh root@${ip} /root/bootstrap.sh
+user=richard
+scp bootstrap-root.sh root@${ip}:/root/bootstrap-root.sh
+ssh root@${ip} /root/bootstrap-root.sh
+
+scp bootstrap-user.sh ${user}@${ip}:/var/tmp/bootstrap-user.sh
+ssh ${user}@${ip} /var/tmp/bootstrap-user.sh

@@ -6,7 +6,6 @@ fs=/dev/disk/by-id/scsi-0DO_Volume_build
 mount=/mnt/build
 user=richard
 user_name="Richard Priestley"
-email="richard.priestley@gmail.com"
 
 if [ ! -d $mount ]
 then
@@ -31,8 +30,6 @@ else
     chown -R ${user}:${user} /home/richard/.ssh
     chmod 0700 /home/${user}/.ssh
     chmod 0600 /home/${user}/.ssh/authorized_keys
-    sudo -u ${user} git config --global user.email ${email}
-    sudo -u ${user} git config --global user.name "${user_name}"
 fi
 
 if [ ! -d "${mount}/aosp" ]
